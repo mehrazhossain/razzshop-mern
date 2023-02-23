@@ -23,7 +23,6 @@ const userSchema = mongoose.Schema(
     },
   },
   {
-    //   this will automatically create, createdAt field.
     timestamps: true,
   }
 )

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import Colors from 'colors'
+import colors from 'colors'
 import users from './data/users.js'
 import products from './data/products.js'
 import User from './models/userModel.js'
@@ -25,7 +25,9 @@ const importData = async () => {
     const sampleProducts = products.map((product) => {
       return { ...product, user: adminUser }
     })
+
     await Product.insertMany(sampleProducts)
+
     console.log('Data Imported!'.green.inverse)
     process.exit()
   } catch (error) {

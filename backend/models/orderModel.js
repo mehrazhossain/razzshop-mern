@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const orderSchema = mongoose.Schema(
   {
-    name: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: 'User',
@@ -21,13 +21,13 @@ const orderSchema = mongoose.Schema(
       },
     ],
     shippingAddress: {
-      adress: { type: String, required: true },
+      address: { type: String, required: true },
       city: { type: String, required: true },
       postalCode: { type: String, required: true },
       country: { type: String, required: true },
     },
     paymentMethod: {
-      type: Boolean,
+      type: String,
       required: true,
     },
     paymentResult: {
@@ -69,7 +69,6 @@ const orderSchema = mongoose.Schema(
     },
   },
   {
-    //   this will automatically create, createdAt field.
     timestamps: true,
   }
 )
